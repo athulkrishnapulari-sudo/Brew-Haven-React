@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext'
 import menuItems from '../data/menuItems'
 
 const baseUrl = import.meta.env.BASE_URL
+const assetUrl = (fileName) => `${baseUrl}assets/images/${encodeURIComponent(fileName)}`
 
 export default function Home(){
   const navigate = useNavigate()
@@ -72,7 +73,7 @@ export default function Home(){
         </section>
         <section id="about">
           <div id="about_container">
-            <img className="about_img" src={`${baseUrl}assets/images/about.jpg`} alt="" />
+            <img className="about_img" src={assetUrl('about.jpg')} alt="" />
             <div id="about_content">
               <h2 id="about_title">A Haven for Coffee Lovers</h2>
               <p className="about_para">At Brew Haven, we believe coffee is more than just a beverage—it's an experience.

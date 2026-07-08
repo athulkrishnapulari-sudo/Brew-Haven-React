@@ -5,6 +5,8 @@ import Footer from './Footer'
 import { useCart } from '../context/CartContext'
 import menuItems from '../data/menuItems'
 
+const baseUrl = import.meta.env.BASE_URL
+
 export default function Home(){
   const navigate = useNavigate()
   const { addItem, items, updateQty, removeItem } = useCart()
@@ -65,12 +67,12 @@ export default function Home(){
                 </div>
               ))}
             </div>
-            <a href="/menu" id="featured_full_menu_btn">View Full Menu <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <Link to="/menu" id="featured_full_menu_btn">View Full Menu <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></Link>
           </div>
         </section>
         <section id="about">
           <div id="about_container">
-            <img className="about_img" src="/assets/images/about.jpg" alt="" />
+            <img className="about_img" src={`${baseUrl}assets/images/about.jpg`} alt="" />
             <div id="about_content">
               <h2 id="about_title">A Haven for Coffee Lovers</h2>
               <p className="about_para">At Brew Haven, we believe coffee is more than just a beverage—it's an experience.
